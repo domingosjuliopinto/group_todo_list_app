@@ -1,1 +1,1 @@
-# group_todo_list_app
+# Group ToDo List Application
