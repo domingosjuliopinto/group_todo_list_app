@@ -8,6 +8,10 @@
 	border-radius: 20px;
 }
 
+.input_form {
+	text-align: center;
+}
+
 form {
 	width: 50%; 
 	margin: 30px auto; 
@@ -26,6 +30,15 @@ form p {
 	padding: 10px;
 	border: 2px solid #6B8E23;
 }
+
+.task_input2 {
+	width: 25%;
+	height: 15px; 
+	padding: 10px;
+	border: 2px solid #6B8E23;
+	margin-top: 1%;
+}
+
 .add_btn {
 	height: 39px;
 	background: #FFF8DC;
@@ -33,6 +46,7 @@ form p {
 	border: 2px solid #6B8E23;
 	border-radius: 5px; 
 	padding: 5px 20px;
+	margin-top: 1%;
 }
 
 table {
