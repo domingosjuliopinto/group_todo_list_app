@@ -19,6 +19,7 @@
 			$tasks_set = mysqli_query($db, "SELECT * FROM tasks");
 
 			$number = 1; while ($row = mysqli_fetch_array($tasks_set)) { 
+			 $number = $row['task_id'];
 			 $number++; 
 			}
 			
