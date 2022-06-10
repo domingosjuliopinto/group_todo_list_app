@@ -19,9 +19,7 @@ This is a Group ToDo List that will help a group to keep track of tasks to be do
 ## Drawbacks
 * No Registration or Login system, thus, if hosted/deployed, anyone with the link can access it. 
 * No Account System, thus the group won't know which member added or deleted the task.
-
-## Future Scope
-* The tasks sorted by priority or deadline 
+* There could be chances of security issues like malicious attacks, if hosted/deployed.
 
 ## Reference
 https://codewithawa.com/posts/to-do-list-application-using-php-and-mysql-database

@@ -39,6 +39,28 @@
 		mysqli_query($db, "DELETE FROM tasks WHERE task_id=".$id);
 		header('location: index.php');
 	}
+	
+	$choice = 0;
+	//sort by choice
+	if (isset($_GET['default'])){
+		$choice = 0;
+	}
+	
+	if (isset($_GET['priority_asc'])){
+		$choice = 1;
+	}
+	
+	if (isset($_GET['priority_desc'])){
+		$choice = 2;
+	}
+	
+	if (isset($_GET['deadline_asc'])){
+		$choice = 3;
+	}
+	
+	if (isset($_GET['deadline_desc'])){
+		$choice = 4;
+	}
 ?>	
 
 <!DOCTYPE html>
@@ -63,6 +85,13 @@
 		<input type="date" name="deadline" class="task_input2">
 		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
 	</form>
+	<form method="get" action="index.php" class="input_form">
+		<button type="submit" name="default" id="default_btn" class="add_btn">Default</button>
+		<button type="submit" name="priority_asc" id="priority_asc_btn" class="add_btn">Priority Asc</button>
+		<button type="submit" name="priority_desc" id="priority_desc_btn" class="add_btn">Priority Desc</button>
+		<button type="submit" name="deadline_asc" id="deadline_asc_btn" class="add_btn">Deadline Asc</button>
+		<button type="submit" name="deadline_desc" id="deadline_desc_btn" class="add_btn">Deadline Desc</button>
+	</form>
 	<table>
 	<thead>
 		<tr>
@@ -77,7 +106,20 @@
 	<tbody>
 		<?php 
 		// select all tasks if page is visited or refreshed
-		$tasks = mysqli_query($db, "SELECT * FROM tasks");
+		$tasks = "";
+		if($choice==0){
+			$tasks = mysqli_query($db, "SELECT * FROM tasks");
+		}elseif($choice==1){
+			$tasks = mysqli_query($db, "SELECT * FROM tasks ORDER BY priority ASC");
+		}elseif($choice==2){
+			$tasks = mysqli_query($db, "SELECT * FROM tasks ORDER BY priority DESC");
+		}elseif($choice==3){
+			$tasks = mysqli_query($db, "SELECT * FROM tasks ORDER BY deadline ASC");
+		}elseif($choice==4){
+			$tasks = mysqli_query($db, "SELECT * FROM tasks ORDER BY deadline DESC");
+		}else{
+			$tasks = mysqli_query($db, "SELECT * FROM tasks");
+		}
 
 		$i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
 			<tr>
