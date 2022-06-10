@@ -42,23 +42,23 @@
 	
 	$choice = 0;
 	//sort by choice
-	if (isset($_GET['default'])){
+	if (isset($_POST['default'])){
 		$choice = 0;
 	}
 	
-	if (isset($_GET['priority_asc'])){
+	if (isset($_POST['priority_asc'])){
 		$choice = 1;
 	}
 	
-	if (isset($_GET['priority_desc'])){
+	if (isset($_POST['priority_desc'])){
 		$choice = 2;
 	}
 	
-	if (isset($_GET['deadline_asc'])){
+	if (isset($_POST['deadline_asc'])){
 		$choice = 3;
 	}
 	
-	if (isset($_GET['deadline_desc'])){
+	if (isset($_POST['deadline_desc'])){
 		$choice = 4;
 	}
 ?>	
@@ -85,7 +85,7 @@
 		<input type="date" name="deadline" class="task_input2">
 		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
 	</form>
-	<form method="get" action="index.php" class="input_form">
+	<form method="post" action="index.php" class="input_form">
 		<label for="choice">View Task by</label><br>
 		<button type="submit" name="default" id="default_btn" class="add_btn">Default view</button>
 		<button type="submit" name="priority_asc" id="priority_asc_btn" class="add_btn">Priority Asc view</button>
