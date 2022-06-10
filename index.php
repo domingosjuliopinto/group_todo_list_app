@@ -86,11 +86,12 @@
 		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
 	</form>
 	<form method="get" action="index.php" class="input_form">
-		<button type="submit" name="default" id="default_btn" class="add_btn">Default</button>
-		<button type="submit" name="priority_asc" id="priority_asc_btn" class="add_btn">Priority Asc</button>
-		<button type="submit" name="priority_desc" id="priority_desc_btn" class="add_btn">Priority Desc</button>
-		<button type="submit" name="deadline_asc" id="deadline_asc_btn" class="add_btn">Deadline Asc</button>
-		<button type="submit" name="deadline_desc" id="deadline_desc_btn" class="add_btn">Deadline Desc</button>
+		<label for="choice">View Task by</label><br>
+		<button type="submit" name="default" id="default_btn" class="add_btn">Default view</button>
+		<button type="submit" name="priority_asc" id="priority_asc_btn" class="add_btn">Priority Asc view</button>
+		<button type="submit" name="priority_desc" id="priority_desc_btn" class="add_btn">Priority Desc view</button>
+		<button type="submit" name="deadline_asc" id="deadline_asc_btn" class="add_btn">Deadline Asc view</button>
+		<button type="submit" name="deadline_desc" id="deadline_desc_btn" class="add_btn">Deadline Desc view</button>
 	</form>
 	<table>
 	<thead>
